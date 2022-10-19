@@ -11,6 +11,7 @@ Lo scopo del programma è quello di salvare le "skill/compentenze" dell'utente.
 ## Stato FE e BE
 
 Il FE non è finito, esiste solo una bozza di login e di come dovrebbe apparire, ma il mio scopo era ripassare Angular e flexbox (motivo per cui ci sono i bordi marcati di alcune sezioni).
+
 Il BE invece lo considero finito, con la possibilità di aggiungere, rimuovere e modificare Skill e Utenti tramite chiamate REST. Attualmente si connette ad un db mySQL in locale.
 
 ## Run
@@ -20,8 +21,8 @@ go run main.go
 ## Chiamate di esempio per testare
 
 I Body di request e response sono in formato JSON.
-In caso di errore la response sarà del tipo:
-404 Not Found / 500 KO
+
+In caso di errore la response sarà del tipo: 404 Not Found / 500 KO
 
 ```json
 {
@@ -34,7 +35,9 @@ In caso di errore la response sarà del tipo:
 #### GetSkills
 
 Recupera tutte le skill a DB.
+
 GET /skills
+
 Response:
 
 ```json
@@ -70,8 +73,11 @@ Response:
 #### GetSkill
 
 Recupera solo la skill con {id} passato nell'url
+
 GET /skills/{id}
+
 GET /skills/3
+
 Response:
 
 ```json
@@ -85,7 +91,9 @@ Response:
 #### InsertSkill
 
 Aggiunge una nuova skill
+
 POST /skills
+
 Body:
 
 ```json
@@ -101,14 +109,19 @@ Response:
 #### DeleteSkill
 
 Elimina la skill con {id} passato nell'url
+
 DELETE /skills/{id}
+
 DELETE /skills/6
 
 #### UpdateSkill
 
 Aggiorna la skill con {id} passato nell'url
+
 PUT /skills/{id}
+
 PUT /skills/6
+
 Body:
 
 ```json
@@ -123,7 +136,9 @@ Body:
 #### Login
 
 Effettua la login
+
 POST /users/login
+
 Body:
 
 ```json
@@ -138,7 +153,9 @@ Response: boolean
 #### GetUsers
 
 Recupera tutti gli utenti a DB.
+
 GET /users
+
 Response:
 
 ```json
@@ -164,8 +181,11 @@ Response:
 #### GetUser
 
 Recupera solo l'utente con {id} passato nell'url
+
 GET /users/{id}
+
 GET /users/3
+
 Response:
 
 ```json
@@ -179,7 +199,9 @@ Response:
 #### InsertUser
 
 Aggiunge un nuovo user
+
 POST /users
+
 Body:
 
 ```json
@@ -195,14 +217,19 @@ Response:
 #### DeleteUser
 
 Elimina l'utente con {id} passato nell'url
+
 DELETE /users/{id}
+
 DELETE /users/6
 
 #### UpdateUser
 
 Aggiorna l'utente con {id} passato nell'url
+
 PUT /users/{id}
+
 PUT /users/6
+
 Body:
 
 ```json
@@ -217,7 +244,9 @@ Body:
 #### GetUserSkills
 
 Recupera tutte le associazioni utente skill
+
 GET /userskill
+
 Response:
 
 ```json
@@ -240,8 +269,11 @@ Response:
 #### GetUsersBySkill
 
 Recupera tutti gli utenti che hanno {skillId}
+
 GET /userskill/users/{skillId}
+
 GET /userskill/users/1
+
 Response:
 
 ```json
@@ -257,8 +289,11 @@ Response:
 #### GetSkillsByUsers
 
 Recupera tutte le skill per {userId}
+
 GET /userskill/skills/{userId}
+
 GET /userskill/skills/2
+
 Response:
 
 ```json
@@ -279,7 +314,9 @@ Response:
 #### InserUserSkill
 
 Aggiunge una skill all'utente
+
 POST /userskill
+
 Body :
 
 ```json
@@ -292,4 +329,5 @@ Body :
 #### DeleteUserSkill
 
 Elimina l'associazione della {skillId} all' {userId}
+
 DELETE /userskill/{userId}/{skillId}
