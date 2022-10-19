@@ -268,7 +268,7 @@ Response:
 
 #### GetUsersBySkill
 
-Recupera tutti gli utenti che hanno {skillId}
+Recupera tutti gli utenti che hanno {skillId}. In questo caso ho immaginato che la password fosse meglio tenerla nascosta e quindi non caricarla di proposito.
 
 GET /userskill/users/{skillId}
 
